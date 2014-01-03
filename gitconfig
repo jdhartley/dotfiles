@@ -1,0 +1,15 @@
+[user]
+	name = JD Hartley
+	email = jdhrtl@gmail.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	up = "!git remote update -p; git merge --ff-only @{u}"
+	status = !git status -sb
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
+	update = "!git fetch; git remote prune origin; git gc; git branch"
+[core]
+	pager = less -x4
