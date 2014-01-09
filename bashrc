@@ -8,6 +8,10 @@ alias whispers='say -v whisper'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias rsyncssh='rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress'
 
+alias such='git'
+alias very='git'
+alias wow='git status'
+
 alias firedave='curl -d key=[REDACTED] http://howmanytimeshasdavebeenfired.com/upit.php'
 
 function woman() {
