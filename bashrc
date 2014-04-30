@@ -1,3 +1,4 @@
+alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 alias lock="/System/Library/CoreServices/'Menu Extras'/User.menu/Contents/Resources/CGSession -suspend"
 alias sb='cd ~/Work/StageBloc/vagrant/vhosts/stagebloc.com/httpdocs/'
 alias gut='git'
