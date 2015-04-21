@@ -13,7 +13,9 @@ alias such='git'
 alias very='git'
 alias wow='git status'
 
-alias firedave='curl -d key=[REDACTED] http://howmanytimeshasdavebeenfired.com/upit.php'
+# https://github.com/nvbn/thefuck
+alias fuck='$(thefuck $(fc -ln -1))'
+alias FUCK='fuck'
 
 function woman() {
   man -t $1 | open -fa Preview
