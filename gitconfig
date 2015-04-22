@@ -13,6 +13,7 @@
 	update = "!git fetch; git remote prune origin; git submodule update; git gc; git branch"
 	plog = "!git log --all --graph --decorate --oneline --abbrev-commit"
 	prune-branches = "!git branch --merged master | grep -v 'master$' | xargs git branch -d"
+	resolved = "!git conflicts | xargs git add && git commit"
 [core]
 	pager = less -x4
 [help]
