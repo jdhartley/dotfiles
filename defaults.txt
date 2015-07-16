@@ -7,3 +7,5 @@ defaults write com.apple.dashboard mcx-disabled -boolean YES
 # Add empty space to Dock to organize apps
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
 
+# Turn on charging chime
+defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/Library/CoreServices/PowerChime.app &
