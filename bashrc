@@ -8,6 +8,7 @@ alias gl='git pull origin'
 alias whispers='say -v whisper'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias rsyncssh='rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress'
+alias subliem='sublime'
 
 alias such='git'
 alias very='git'
