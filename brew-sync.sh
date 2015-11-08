@@ -19,16 +19,16 @@ $CASK list > /tmp/brew-cask-sync.installed
 
 # then combine it with list in Dropbox
 echo "Reading settings from Dropbox..."
-[ -e ~/Dropbox/Apps/Homebrew/brew-sync.taps ] && cat ~/Dropbox/Apps/Homebrew/brew-sync.taps >> /tmp/brew-sync.taps
-[ -e ~/Dropbox/Apps/Homebrew/brew-sync.installed ] && cat ~/Dropbox/Apps/Homebrew/brew-sync.installed >> /tmp/brew-sync.installed
-[ -e ~/Dropbox/Apps/Homebrew/brew-cask-sync.installed ] && cat ~/Dropbox/Apps/Homebrew/brew-cask-sync.installed >> /tmp/brew-cask-sync.installed
+[ -e ~/Dropbox/.sync/homebrew/brew-sync.taps ] && cat ~/Dropbox/.sync/homebrew/brew-sync.taps >> /tmp/brew-sync.taps
+[ -e ~/Dropbox/.sync/homebrew/brew-sync.installed ] && cat ~/Dropbox/.sync/homebrew/brew-sync.installed >> /tmp/brew-sync.installed
+[ -e ~/Dropbox/.sync/homebrew/brew-cask-sync.installed ] && cat ~/Dropbox/.sync/homebrew/brew-cask-sync.installed >> /tmp/brew-cask-sync.installed
 
 # make the lists unique and sync into Dropbox
 echo "Syncing to Dropbox..."
-mkdir -p ~/Dropbox/Apps/Homebrew
-cat /tmp/brew-sync.taps | sort | uniq > ~/Dropbox/Apps/Homebrew/brew-sync.taps
-cat /tmp/brew-sync.installed | sort | uniq > ~/Dropbox/Apps/Homebrew/brew-sync.installed
-cat /tmp/brew-cask-sync.installed | sort | uniq > ~/Dropbox/Apps/Homebrew/brew-cask-sync.installed
+mkdir -p ~/Dropbox/.sync/homebrew
+cat /tmp/brew-sync.taps | sort | uniq > ~/Dropbox/.sync/homebrew/brew-sync.taps
+cat /tmp/brew-sync.installed | sort | uniq > ~/Dropbox/.sync/homebrew/brew-sync.installed
+cat /tmp/brew-cask-sync.installed | sort | uniq > ~/Dropbox/.sync/homebrew/brew-cask-sync.installed
 
 # Update brew
 echo "Update brew, brew-cask"
@@ -36,7 +36,7 @@ brew update && brew upgrade brew-cask && brew cleanup
 
 # Set taps
 echo "Enabling taps..."
-for TAP in `cat ~/Dropbox/Apps/Homebrew/brew-sync.taps`; do
+for TAP in `cat ~/Dropbox/.sync/homebrew/brew-sync.taps`; do
   $BREW tap ${TAP} >/dev/null
 done
 
@@ -44,11 +44,11 @@ done
 BREW_LIST=`brew list`
 
 echo "Install missing brew packages..."
-for PACKAGE in `cat ~/Dropbox/Apps/Homebrew/brew-sync.installed`; do
+for PACKAGE in `cat ~/Dropbox/.sync/homebrew/brew-sync.installed`; do
   echo "Checking ${PACKAGE}..."
   grep -q ${PACKAGE} <<< $BREW_LIST >/dev/null #Here string, who knew
-  if [ "$?" != "0" ]; then 
-    echo " INSTALLING" 
+  if [ "$?" != "0" ]; then
+    echo " INSTALLING"
     $BREW install ${PACKAGE}
   else
     echo " NOPE"
@@ -59,11 +59,11 @@ done
 CASK_LIST=`brew cask list`
 
 echo "Install missing brew casks..."
-for PACKAGE in `cat ~/Dropbox/Apps/Homebrew/brew-cask-sync.installed`; do
+for PACKAGE in `cat ~/Dropbox/.sync/homebrew/brew-cask-sync.installed`; do
   echo "Checking ${PACKAGE}..."
   grep -q ${PACKAGE} <<< $CASK_LIST >/dev/null
   if [ "$?" != "0" ]; then
-    echo " INSTALLING" 
+    echo " INSTALLING"
     $CASK install ${PACKAGE}
   else
     echo " NOPE"
