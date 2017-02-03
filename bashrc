@@ -21,3 +21,5 @@ alias FUCK='fuck'
 function woman() {
   man -t $1 | open -fa Preview
 }
+
+alias cs='killall ControlStrip'
