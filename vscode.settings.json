@@ -1,0 +1,47 @@
+{
+    "editor.minimap.enabled": true,
+    "editor.dragAndDrop": true,
+    "editor.fontSize": 15,
+    "editor.wordWrap": "on",
+    "editor.renderLineHighlight": "gutter",
+    "php.suggest.basic": false,
+    "files.associations": {
+        "*.sbt": "html",
+        "*.vue": "vue"
+    },
+    "workbench.editor.tabCloseButton": "left",
+    "workbench.quickOpen.closeOnFocusLost": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.colorTheme": "Dracula",
+    "window.zoomLevel": 0,
+    "editor.fontFamily": "Hack, Menlo-Regular, Menlo, Monaco, 'Courier New', monospace",
+    "workbench.iconTheme": "material-icon-theme",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ],
+    "html.autoClosingTags": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "material-icon-theme.languages.associations": {
+        "php": "php_elephant"
+    },
+    "search.smartCase": true,
+    "[markdown]": {},
+    "workbench.startupEditor": "newUntitledFile",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.gitExplorer.enabled": false,
+    "gitlens.historyExplorer.enabled": false,
+    "gitlens.resultsExplorer.files.compact": false,
+    "gitlens.recentChanges.toggleMode": "window",
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+    "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    "files.defaultLanguage": "markdown",
+}
