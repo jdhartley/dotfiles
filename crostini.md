@@ -54,6 +54,8 @@ sudo apt-get update && \
   yarn
 ```
 
+Be sure to set a `NPM_CONFIG_PREFIX` env variable before trying to `npm i -g`.
+
 
 ```bash
 curl -L -o /tmp/discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
